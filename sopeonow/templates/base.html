@@ -1,0 +1,88 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sopeo Now</title>
+    <link href="{% static 'styles.css' %}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+<body style="position:relative; ">
+{% include "navbar.html" %}
+
+{% block content %}
+
+<div class="bg-image shadow-2-strong" id="intro"
+     style="background-image: url('https://mdbootstrap.com/img/new/fluid/city/018.jpg');">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+            <div class="text-white col">
+                <h1 class="mb-3">Human Resourse Manager</h1>
+                <h5 class="mb-4">Manage All Abouts Of Your Company Staffs Here..! </h5>
+                <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=hqBYAkaYeic"
+                   rel="nofollow"
+                   role="button" target="_blank">Why Human Resource Management</a>
+                <a class="btn btn-outline-light btn-lg m-2" href="https://www.sopeonow.com/#facts" role="button"
+                   target="_blank">Why us?</a>
+            </div>
+
+
+            <div class="row d-flex justify-content-evenly col" >
+                <h4><span style="color:white"> Employees Status on {{today}}</span></h4>
+                <div class="col card border-secondary m-3" style="max-width: 17rem; max-height:10rem">
+                    <div class="card-header"><h6>Total Employees</h6>
+                    </div>
+                    <div class="card-body text-secondary">
+<!--                        <h5 class="card-title">Total Employees</h5>-->
+                        <h1 class="card-text">{{Total_count}}</h1>
+                    </div>
+                </div>
+                <div class="col card border-secondary m-3" style="max-width: 17rem; max-height:10rem">
+                    <div class="card-header"><h6>Employees Active</h6>
+                    </div>
+                    <div class="card-body text-secondary">
+                        <h1 class="card-text">{{employees_active}}</h1>
+                    </div>
+                </div>
+                <div class="col card border-secondary m-3" style="max-width: 17rem;max-height:10rem">
+                    <div class="card-header">
+                        <h6>Employees on leave </h6>
+                    </div>
+                    <div class="card-body text-secondary">
+<!--                        <h5 class="card-title">Employees on leave today</h5>-->
+                        <h1>{{employees_on_leave_count}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--    <div class="bgImg" >-->
+
+<!--        <p>-->
+<!--            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis-->
+<!--            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae-->
+<!--            aliquam voluptatem veniam, est atque cumque eum delectus sint!-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis-->
+<!--            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae-->
+<!--            aliquam voluptatem veniam, est atque cumque eum delectus sint!-->
+<!--        </p>-->
+
+<!--    </div>-->
+
+{% endblock %}
+
+{% include "footer.html" %}
+</body>
+</html>

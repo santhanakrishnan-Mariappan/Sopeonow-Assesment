@@ -1,0 +1,38 @@
+*{
+font-family:Heebo;
+
+}
+
+.detail-button{
+background-color:pink;
+background:red;
+color:red;
+}
+
+.bgImg{
+min-height:400px;
+position:relative;
+
+::before{
+content:"";
+position:absolute;
+background-image:url('https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg');
+opacity:0.5;
+
+background-repeat: no-repeat;
+background-size: 100% 600px;
+
+ }
+ }
+
+
+
+.input-group>.form-control, .input-group>.form-select{
+ background-color: #f9e2e6
+ }
+
+ #form-container{
+ margin-top:17px;
+ margin-bottom:17px;
+ padding:17px;
+ }

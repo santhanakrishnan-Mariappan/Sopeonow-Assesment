@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mx-auto col-md-6 border border-1 " id="form-container"
+     style="min-height:410px; position:relative; background-color: #fff;">
+    <h3>Edit Employee</h3>
+
+    <form class="row g-1" enctype="multipart/form-data" method="POST">
+
+
+        {% csrf_token %}
+        <div class="col-md-6 ">
+            <label class="form-label" for="id_Name">Name</label>
+            <div class="input-group ">
+                {{form.Name}}
+            </div>
+        </div>
+        <div class="invalid-feedback">
+            Please select a valid state.
+        </div>
+        <div class="col-md-6 mb-0">
+            <label class="form-label" for="id_post">Post</label>
+            <div class="input-group ">
+                {{form.post}}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="id_DOB">DOB</label>
+            <div class="input-group">
+                {{form.DOB}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="id_DOJ">DOJ</label>
+            <div class="input-group">
+                {{form.DOJ}}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="id_Department">Department</label>
+            <div class="input-group">
+                {{form.Department}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="id_Address">Address</label>
+            <div class="input-group">
+                {{form.Address}}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="id_City">City</label>
+            <div class="input-group">
+                {{form.City}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="id_Country">Country</label>
+            <div class="input-group">
+                {{form.Country}}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="id_ZipCode">ZipCode</label>
+            <div class="input-group">
+                {{form.ZipCode}}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="id_State">State</label>
+            <div class="input-group">
+                {{form.State}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="id_dp">Leaves Available</label>
+            <div class="input-group">
+                {{form.Leave_count}}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="id_dp">Upload Image</label>
+            <div class="input-group">
+                {{form.dp}}
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <label class="form-label" for="id_on_leave">On Leave</label>
+            <!--            <div class="input-group">-->
+            {{form.on_leave}}
+            <!--            </div>-->
+        </div>
+
+
+        <div class="">
+            <a href="{% url 'emp-list' %}"><input class="btn btn-md btn-light ms-1 float-end" type="submit"
+                                                  value="Cancel"/></a>
+            <input class="btn btn-md btn-primary ms-1 float-end" style="background-color:#f9e2e6; color:black"
+                   type="submit" value="Update"/>
+        </div>
+
+    </form>
+</div>
+
+
+{% endblock %}

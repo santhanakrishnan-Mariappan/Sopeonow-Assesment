@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="min-height:400px; background-image:url('employee.dp.url');background-size: 100% 500px; background-repeat: no-repeat;">
+
+    <div class="card text-white mx-auto" style="height:80%; width:50%; margin:2%; position:relative; ">
+
+        <img alt="..." class="card-img" src="{{employee.dp.url}}" style="opacity:50%; height:100%; width:100%;  ">
+        <!--    <div>-->
+        <div class="row card-img-overlay ">
+            <div class="col d-grid gap-2">
+                <button class="btn bg-transparent shadow-lg p-2 mb-1  bg-body rounded fw-bold" type="button">
+                    Name:{{employee.Name}}
+                </button>
+                <button class="btn bg-transparent shadow-lg p-2 mb-1 bg-body rounded fw-bold" type="button">
+                    DOB:{{employee.DOB}}
+                </button>
+                <button class="btn bg-transparent shadow-lg p-2 mb-1 bg-body rounded fw-bold" type="button">
+                    Date of Joining : {{employee.DOJ}}
+                </button>
+                <!--                <button class="btn bg-transparent shadow-lg p-3 mb-1 bg-body rounded fw-bold" type="button">-->
+                <!--                    Date of Birth:{{employee.DOB}}-->
+                <!--                </button>-->
+                <button class="btn bg-transparent shadow-lg p-3 mb-1 bg-body rounded fw-bold" type="button">
+                    Department : {{employee.Department}}
+                </button>
+                <button class="btn bg-transparent shadow-lg p-3 mb-1 bg-body rounded fw-bold" type="button">
+                    Post : {{employee.post}}
+                </button>
+            </div>
+
+            <div class="col d-grid gap-2">
+                <button class="btn bg-transparent shadow-lg  bg-body rounded fw-bold" type="button">
+                    Address : {{employee.Address}}
+                </button>
+                <button class="btn bg-transparent shadow-lg  bg-body rounded fw-bold" type="button">
+                    City : {{employee.City}}
+                </button>
+                <button class="btn bg-transparent shadow-lg  bg-body rounded fw-bold" type="button">
+                    State :{{employee.State}}
+                </button>
+                <button class="btn bg-transparent shadow-lg  bg-body rounded fw-bold" type="button">
+                    Zip Code : {{employee.ZipCode}}
+                </button>
+                <button class="btn bg-transparent shadow-lg  bg-body rounded fw-bold" type="button">
+                    Leaves Available: {{employee.Leave_count}}
+                </button>
+            </div>
+            <!--        </div>-->
+
+            <a class="d-flex justify-content-center" href="{% url 'emp-edit' employee.pk %}"
+               style="text-decoration:none">
+                <button class="btn bg-transparent shadow-lg bg-body rounded fw-bold "
+                        style="height:50px; width:200px; margin-top:20px"> Edit
+                </button>
+            </a>
+
+            <a class="d-flex justify-content-center" href="{% url 'emp-delete' employee.pk %}"
+               style="text-decoration:none">
+                <button class="btn bg-transparent shadow-lg bg-body rounded fw-bold"
+                        style="height:50px; width:200px; margin-top:20px"> Delete
+                </button>
+            </a>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

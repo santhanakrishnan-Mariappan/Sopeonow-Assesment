@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background-image:url('https://media.istockphoto.com/id/931587220/photo/high-court-in-chennai-india.jpg?s=612x612&w=0&k=20&c=J3TvXZRRVhlKsqea9z9cplmUmlWJ-2BwWarxWyMvyo8=')">
+    <div>
+        <h1 style="margin-left:10px">{{today}}</h1>
+    </div>
+    <div class="row d-flex justify-content-evenly">
+
+        <div class="col card border-secondary m-3" style="max-width: 18rem;">
+            <div class="card-header">{{Total_count}}
+            </div>
+            <div class="card-body text-secondary">
+                <h5 class="card-title">Total Employees</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+            </div>
+        </div>
+        <div class="col card border-secondary m-3" style="max-width: 18rem;">
+            <div class="card-header">{{employees_active}}
+            </div>
+            <div class="card-body text-secondary">
+                <h5 class="card-title">Employees Active</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+            </div>
+        </div>
+        <div class="col card border-secondary m-3" style="max-width: 18rem;">
+            <div class="card-header">
+                {{employees_on_leave_count}}
+            </div>
+            <div class="card-body text-secondary">
+                <h5 class="card-title">Employees on leave today</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
