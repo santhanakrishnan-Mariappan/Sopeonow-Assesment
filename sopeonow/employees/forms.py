@@ -19,6 +19,8 @@ class EmployeeCreationForm(ModelForm):
         model = Employee
         fields = ('Name', 'post', 'DOB', 'DOJ', 'Department', 'Address', 'City', 'Country', 'ZipCode', 'dp', 'State',
                   'Leave_count', 'on_leave')
+        # DOB = forms.DateField(required=False, widget=forms.widgets.DateInput(
+        #     attrs={'type': 'date', 'min': '1899-01-01', 'max': '2005-01-01'}))
 
         def clean(self, *args, **kwargs):
             super(EmployeeCreationForm, self).clean(*args, **kwargs)
@@ -29,16 +31,12 @@ class EmployeeCreationForm(ModelForm):
             if Name is not None and not Name.isalpha():
                 raise forms.ValidationError('error')
 
-            if DOB < today:
-                raise ValidationError('Start time must be later than now.')
-
-            return self.cleaned_data
-
         widgets = {
             'Name': forms.TextInput(attrs={'class': 'fc form-control form-control-sm '}),
             'post': forms.TextInput(attrs={'class': 'form-control form-control-sm fc'}),
-            'DOB': DateInput(attrs={'class': 'form-control form-control-sm', 'min' : 'date.today()'}),
-            'DOJ': DateInput(attrs={'class': 'form-control form-control-sm', 'min' : 'date.today()'}),
+            # 'DOB': DateInput(attrs={'class': 'form-control form-control-sm', 'min': datetime.date.today()}),
+            'DOB': DateInput({'class': 'form-control form-control-sm fc', 'type': 'date', 'min': '1899-01-01', 'max': '2005-01-01'}),
+            'DOJ': DateInput({'class': 'form-control form-control-sm fc','type': 'date', 'min': '2005-01-01', 'max': date.today()}),
             'Department': forms.TextInput(attrs={'class': 'form-control form-control-sm'}),
             'Address': forms.TextInput(attrs={'class': 'form-control form-control-sm'}),
             'City': forms.TextInput(attrs={'class': 'form-control form-control-sm'}),
